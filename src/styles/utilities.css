@@ -1,0 +1,29 @@
+.flex {
+  display: flex;
+}
+
+.flexSB {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btnIcon {
+  padding: 10px;
+}
+
+.avatar {
+  color: black;
+  margin-right: 10px;
+}

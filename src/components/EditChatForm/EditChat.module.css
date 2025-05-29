@@ -1,0 +1,29 @@
+.сontainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.input {
+  outline: none;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.btn {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn:hover,
+.btn:focus {
+  color: #2196f3;
+  border: 1px solid #2196f3;
+}
