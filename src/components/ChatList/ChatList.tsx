@@ -48,9 +48,9 @@ export const ChatList = () => {
   };
 
   useEffect(() => {
-    const newSocket = io('http://localhost:5000');
+    const newSocket = io('https://chat-be-yu3g.onrender.com');
     setSocket(newSocket);
-    
+
     newSocket.on('connect', () => {
       console.log('Подключен к серверу');
     });

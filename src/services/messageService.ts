@@ -1,7 +1,7 @@
 import type { Socket } from 'socket.io-client';
 
 export const fetchMessages = async (chatId: string) => {
-  const response = await fetch(`http://localhost:5000/messages/${chatId}`);
+  const response = await fetch(`https://chat-be-yu3g.onrender.com/messages/${chatId}`);
   if (!response.ok) {
     throw new Error('Error loading messages');
   }
@@ -9,7 +9,7 @@ export const fetchMessages = async (chatId: string) => {
 };
 
 export const sendMessage = async (chatId: string, text: string) => {
-  const response = await fetch(`http://localhost:5000/messages/${chatId}`, {
+  const response = await fetch(`https://chat-be-yu3g.onrender.com/messages/${chatId}`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ text }),

@@ -1,5 +1,5 @@
 export const fetchChats = async () => {
-  const response = await fetch('http://localhost:5000/chats');
+  const response = await fetch('https://chat-be-yu3g.onrender.com/chats');
   if (!response.ok) {
     throw new Error('Error loading chats');
   }
@@ -7,7 +7,7 @@ export const fetchChats = async () => {
 };
 
 export const createChat = async (firstName: string, lastName: string) => {
-  const response = await fetch('http://localhost:5000/chats', {
+  const response = await fetch('https://chat-be-yu3g.onrender.com/chats', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ firstName, lastName }),
@@ -21,7 +21,7 @@ export const createChat = async (firstName: string, lastName: string) => {
 };
 
 export const deleteChat = async (id: string) => {
-  const response = await fetch(`http://localhost:5000/chats/${id}`, {
+  const response = await fetch(`https://chat-be-yu3g.onrender.com/chats/${id}`, {
     method: 'DELETE',
   });
 
@@ -33,7 +33,7 @@ export const deleteChat = async (id: string) => {
 };
 
 export const updateChat = async (id: string, firstName: string, lastName: string) => {
-  const response = await fetch(`http://localhost:5000/chats/${id}`, {
+  const response = await fetch(`https://chat-be-yu3g.onrender.com/chats/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ firstName, lastName }),
@@ -48,7 +48,7 @@ export const updateChat = async (id: string, firstName: string, lastName: string
 
 export const toggleRandomMessages = async (enabled: boolean) => {
   try {
-    const response = await fetch('http://localhost:5000/messages/random/toggle', {
+    const response = await fetch('https://chat-be-yu3g.onrender.com/messages/random/toggle', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ enabled }),
