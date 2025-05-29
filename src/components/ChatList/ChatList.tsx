@@ -51,9 +51,7 @@ export const ChatList = () => {
     const newSocket = io('https://chat-be-yu3g.onrender.com');
     setSocket(newSocket);
 
-    newSocket.on('connect', () => {
-      console.log('Подключен к серверу');
-    });
+    newSocket.on('connect', () => {});
 
     newSocket.on('chatCreated', (newChat: Chat) => {
       setChats(prev => [...prev, newChat]);
@@ -71,9 +69,8 @@ export const ChatList = () => {
     });
 
     newSocket.on('newMessage', (message: Message) => {
-      console.log('Новое сообщение получено:', message);
       if (message.isAutoResponse) {
-        toast.info(`Auto reply received for active chat`);
+        toast.info(`Automatic response received)`);
       }
       setChats(prevChats =>
         prevChats.map(chat =>
@@ -83,10 +80,6 @@ export const ChatList = () => {
     });
 
     newSocket.on('randomMessageNotification', (data: { chatId: string; message: Message }) => {
-      console.log(
-        'Новое случайное сообщение получено (через randomMessageNotification):',
-        data.message
-      );
       toast.info(`New random message sent`);
       setChats(prevChats =>
         prevChats.map(chat =>
@@ -95,9 +88,7 @@ export const ChatList = () => {
       );
     });
 
-    newSocket.on('disconnect', () => {
-      console.log('Отключен от сервера');
-    });
+    newSocket.on('disconnect', () => {});
 
     loadChats();
 

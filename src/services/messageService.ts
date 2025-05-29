@@ -22,12 +22,10 @@ export const sendMessage = async (chatId: string, text: string) => {
   return await response.json();
 };
 
-// Подключение к комнате чата
 export const joinChatRoom = (socket: Socket, chatId: string) => {
   socket.emit('joinChat', chatId);
 };
 
-// Покидание комнаты чата
 export const leaveChatRoom = (socket: Socket, chatId: string) => {
   socket.emit('leaveChat', chatId);
 };

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { addHours, format } from 'date-fns';
+import { format } from 'date-fns';
 import {
   fetchMessages,
   joinChatRoom,
@@ -147,7 +147,7 @@ export const ChatDialog = ({ chatId, chatName, socket }: ChatDialogProps) => {
                       textAlign: msg.isAutoResponse ? 'right' : 'left',
                     }}
                   >
-                    {format(addHours(new Date(msg.createdAt), 12), 'M/d/yyyy, h:mm a')}
+                    {format(new Date(msg.createdAt), 'M/d/yyyy, h:mm a')}
                   </div>
                 </div>
               </div>
